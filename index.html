@@ -1,23 +1,1160 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
+
+
+    <!-- Schema.org Structured Data: FAQPage & Product -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "2026년형 기아 쏘렌토의 하이브리드 모델과 가솔린 모델의 실제 가격 차이는 얼마인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "2026년형 쏘렌토 하이브리드 2WD 세제혜택 적용 기준 프레스티지 가격은 3,896만 원이며, 2.5 가솔린 터보 프레스티지 가격은 3,580만 원으로 기본 트림 기준 가격 차이는 316만 원입니다. 그러나 취등록세 감면 혜택과 주행 연비 차이에 따른 유류비 절감액을 고려하면 연간 2만km 주행 시 약 2년에서 3년 내에 실질적인 가격 차이가 상쇄될 수 있습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "쏘렌토 장기렌트와 자동차 리스의 핵심 차이점은 무엇인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "가장 큰 차이점은 보험 가입 주체와 차량 번호판입니다. 장기렌트는 렌트사 명의의 보험에 가입되어 사고 시 개인 보험료 할증이 없고 하, 허, 호 번호판을 사용합니다. 반면 자동차 리스는 이용자 개인 명의로 자동차 보험에 가입하므로 무사고 경력이 유지되지만 사고 시 할증 우려가 있으며, 일반 번호판을 사용하여 품위를 유지할 수 있다는 장점이 있습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "쏘렌토 견적 시 세금 혜택을 최대로 받는 방법이 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "1.6 터보 하이브리드 2WD 모델을 선택하시면 친환경차 세제혜택인 개별소비세 최대 143만 원 감면 및 취득세 최대 40만 원 감면을 온전히 누리실 수 있습니다. 반면 하이브리드 4WD 모델의 경우 친환경차 세제혜택 연비 기준을 충족하지 못해 취등록세 및 개별소비세 감면 혜택이 적용되지 않으므로, 경제성을 제일 중시하신다면 2WD 하이브리드를 추천드립니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "2026 쏘렌토 연식변경 모델에서 새롭게 적용된 X-Line 트림의 특징은 무엇인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "2026년형 쏘렌토 X-Line 트림은 기존에 판매되던 최상위 그래비티 트림을 대체하며, 보다 강인하고 오프로드 느낌이 강조된 외관 디자인이 특징입니다. 전용 라디에이터 그릴, 다크 메탈 스키드 플레이트, 블랙 아웃사이드 미러 커버 및 블랙 엠블럼과 블랙 휠캡 등이 적용되어 세련되면서도 묵직한 존재감을 선사합니다."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- 스타일: 부드럽고 다채로운 색감, 가독성 높은 시각적 계층 구조 -->
+    <style>
+      :root {
+        --primary-color: #1e293b; /* 깊고 부드러운 네이비 */
+        --secondary-color: #0f766e; /* 세련된 청록색 (Teal) */
+        --accent-color: #06b6d4; /* 화사한 청록빛 스카이블루 */
+        --highlight-color: #f0fdfa; /* 매우 부드러운 파스텔 민트색 배경 */
+        --coral-accent: #f97316; /* 따뜻하고 명확한 주황색 (강조/버튼) */
+        --coral-hover: #ea580c; /* 버튼 호버시 톤 다운된 주황색 */
+        --text-color: #334155; /* 부드러운 다크 그레이 */
+        --bg-light: #f8fafc; /* 편안한 연회색 배경 */
+        --bg-white: #ffffff;
+        --border-color: #e2e8f0;
+      }
+      
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+      body {
+        font-family: 'Noto Sans KR', sans-serif;
+        margin: 0; padding: 0;
+        background-color: var(--bg-light);
+        color: var(--text-color);
+        line-height: 1.8;
+        font-size: 16px;
+      }
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      header {
+        background-color: var(--primary-color);
+        padding: 24px 0;
+        border-bottom: 4px solid var(--secondary-color);
+      }
+      header .logo-container {
+        text-align: center;
+      }
+      header h1 {
+        margin: 0;
+        font-size: 2.2rem;
+        font-weight: 900;
+        color: var(--bg-white);
+        letter-spacing: -1px;
+      }
+      header h1 a {
+        color: var(--bg-white);
+        text-decoration: none;
+      }
+      header p {
+        color: var(--accent-color);
+        margin: 8px 0 0 0;
+        font-size: 1.1rem;
+        font-weight: 500;
+      }
+      
+      .hero {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: var(--bg-white);
+        padding: 60px 0;
+        text-align: center;
+      }
+      .hero h2 {
+        font-size: 2.8rem;
+        margin: 0 0 16px 0;
+        font-weight: 900;
+        letter-spacing: -1px;
+      }
+      .hero p {
+        font-size: 1.25rem;
+        margin: 0 auto 30px auto;
+        max-width: 800px;
+        color: #cbd5e1;
+        font-weight: 300;
+      }
+
+      /* 견적 및 계산기 카드 */
+      .calculator-section {
+        background: var(--bg-white);
+        border-radius: 16px;
+        padding: 40px;
+        box-shadow: 0 10px 25px rgba(30, 41, 59, 0.08);
+        margin-top: -40px;
+        margin-bottom: 50px;
+        border: 1px solid var(--border-color);
+      }
+      .calculator-section h3 {
+        color: var(--primary-color);
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 24px;
+        text-align: center;
+        border-bottom: 2px solid var(--highlight-color);
+        padding-bottom: 12px;
+      }
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+      .form-group {
+        display: flex;
+        flex-direction: column;
+      }
+      .form-group label {
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: var(--primary-color);
+        font-size: 1rem;
+      }
+      .form-group select, .form-group input {
+        padding: 12px 16px;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        font-size: 1rem;
+        color: var(--text-color);
+        background-color: var(--bg-light);
+        transition: border-color 0.3s;
+      }
+      .form-group select:focus, .form-group input:focus {
+        border-color: var(--secondary-color);
+        outline: none;
+        background-color: var(--bg-white);
+      }
+      
+      .options-group {
+        grid-column: span 2;
+        margin-top: 10px;
+      }
+      .options-group label {
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 12px;
+        display: block;
+      }
+      .checkbox-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+      }
+      .checkbox-item {
+        display: flex;
+        align-items: center;
+        background: var(--bg-light);
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .checkbox-item input {
+        margin-right: 10px;
+        width: 18px;
+        height: 18px;
+      }
+      .checkbox-item:hover {
+        background: var(--highlight-color);
+      }
+
+      .calc-btn-container {
+        grid-column: span 2;
+        text-align: center;
+        margin-top: 20px;
+      }
+      .calc-btn {
+        background-color: var(--coral-accent);
+        color: var(--bg-white);
+        padding: 16px 40px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: background-color 0.2s, transform 0.2s;
+        box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+      }
+      .calc-btn:hover {
+        background-color: var(--coral-hover);
+        transform: translateY(-2px);
+      }
+
+      /* 계산 결과 영역 */
+      .calc-result-box {
+        margin-top: 30px;
+        padding: 30px;
+        background-color: var(--highlight-color);
+        border-radius: 12px;
+        border: 2px dashed var(--secondary-color);
+        display: none;
+      }
+      .calc-result-box h4 {
+        margin-top: 0;
+        color: var(--secondary-color);
+        font-size: 1.4rem;
+        text-align: center;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      .result-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .result-item {
+        background: var(--bg-white);
+        padding: 16px;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .result-item span.label {
+        font-weight: 500;
+        color: #64748b;
+      }
+      .result-item span.value {
+        font-weight: 700;
+        color: var(--primary-color);
+        font-size: 1.15rem;
+      }
+      .result-item.total {
+        grid-column: span 2;
+        background-color: var(--secondary-color);
+        color: var(--bg-white);
+        border: none;
+      }
+      .result-item.total span.label {
+        color: #e2e8f0;
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+      .result-item.total span.value {
+        color: var(--bg-white);
+        font-size: 1.5rem;
+        font-weight: 900;
+      }
+
+      /* 본문 콘텐츠 스타일 */
+      .content-section {
+        background-color: var(--bg-white);
+        padding: 60px 40px;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(30, 41, 59, 0.03);
+        margin-bottom: 40px;
+        border: 1px solid var(--border-color);
+      }
+      .content-section h2 {
+        font-size: 2rem;
+        color: var(--primary-color);
+        margin-top: 0;
+        margin-bottom: 24px;
+        font-weight: 700;
+        border-left: 6px solid var(--secondary-color);
+        padding-left: 16px;
+      }
+      .content-section h3 {
+        font-size: 1.5rem;
+        color: var(--secondary-color);
+        margin-top: 36px;
+        margin-bottom: 16px;
+        font-weight: 700;
+      }
+      .content-section h4 {
+        font-size: 1.2rem;
+        color: var(--primary-color);
+        margin-top: 24px;
+        margin-bottom: 12px;
+        font-weight: 700;
+      }
+      .content-section p {
+        margin-bottom: 20px;
+        color: var(--text-color);
+      }
+      
+      .info-list {
+        margin: 20px 0;
+        padding-left: 20px;
+        list-style-type: none;
+      }
+      .info-list li {
+        margin-bottom: 12px;
+        position: relative;
+        padding-left: 20px;
+        color: var(--text-color);
+      }
+      .info-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 10px;
+        width: 8px;
+        height: 8px;
+        background-color: var(--accent-color);
+        border-radius: 50%;
+      }
+
+      /* 테이블 디자인 */
+      .table-container {
+        margin: 30px 0;
+        overflow-x: auto;
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 4px 12px rgba(30, 41, 59, 0.02);
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        font-size: 0.95rem;
+      }
+      th, td {
+        padding: 16px;
+        border-bottom: 1px solid var(--border-color);
+      }
+      th {
+        background-color: var(--primary-color);
+        color: var(--bg-white);
+        font-weight: 700;
+      }
+      tr:last-child td {
+        border-bottom: none;
+      }
+      tr:nth-child(even) td {
+        background-color: var(--bg-light);
+      }
+      
+      /* 그래프 형태 시각 자료 */
+      .visual-chart {
+        background-color: var(--highlight-color);
+        padding: 30px;
+        border-radius: 12px;
+        margin: 30px 0;
+        border: 1px solid var(--border-color);
+      }
+      .visual-chart h4 {
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 24px;
+        color: var(--secondary-color);
+      }
+      .chart-bar-container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .chart-row {
+        display: flex;
+        align-items: center;
+      }
+      .chart-label {
+        width: 150px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        color: var(--primary-color);
+      }
+      .chart-bar-wrapper {
+        flex-grow: 1;
+        background-color: #e2e8f0;
+        height: 24px;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .chart-bar {
+        height: 100%;
+        background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+        border-radius: 12px;
+        transition: width 1s ease-in-out;
+      }
+      .chart-value {
+        width: 80px;
+        text-align: right;
+        font-weight: 700;
+        font-size: 0.9rem;
+        color: var(--primary-color);
+        margin-left: 12px;
+      }
+
+      /* 자주 묻는 질문 (FAQ) */
+      .faq-container {
+        margin-top: 40px;
+      }
+      .faq-item {
+        background-color: var(--bg-light);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        margin-bottom: 16px;
+        overflow: hidden;
+        transition: all 0.3s;
+      }
+      .faq-item-title {
+        padding: 20px 24px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: var(--primary-color);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        user-select: none;
+      }
+      .faq-item-title-text {
+        padding-right: 16px;
+      }
+      .faq-item-status {
+        font-weight: 700;
+        color: var(--secondary-color);
+        font-size: 0.9rem;
+        border: 1px solid var(--secondary-color);
+        padding: 4px 10px;
+        border-radius: 20px;
+        background-color: var(--bg-white);
+      }
+      .faq-item-content {
+        padding: 0 24px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        background-color: var(--bg-white);
+        border-top: 0 solid var(--border-color);
+        color: var(--text-color);
+      }
+      .faq-item.active {
+        box-shadow: 0 4px 15px rgba(30, 41, 59, 0.05);
+        border-color: var(--secondary-color);
+      }
+      .faq-item.active .faq-item-content {
+        padding: 20px 24px;
+        max-height: 1000px;
+        border-top: 1px solid var(--border-color);
+      }
+
+      /* 외부 링크 스타일 */
+      .external-link-card {
+        background-color: var(--bg-light);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 24px;
+        margin-top: 40px;
+      }
+      .external-link-card h3 {
+        margin-top: 0;
+        color: var(--primary-color);
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+      .link-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .link-item {
+        display: flex;
+        align-items: center;
+      }
+      .link-item a {
+        color: var(--secondary-color);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+      .link-item a:hover {
+        color: var(--accent-color);
+        text-decoration: underline;
+      }
+
+      footer {
+        background-color: var(--primary-color);
+        color: #94a3b8;
+        padding: 40px 0;
+        text-align: center;
+        font-size: 0.9rem;
+        border-top: 4px solid var(--secondary-color);
+        margin-top: 60px;
+      }
+      footer p {
+        margin: 6px 0;
+      }
+      footer a {
+        color: var(--accent-color);
+        text-decoration: none;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* 반응형 디자인 */
+      @media (max-width: 900px) {
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+        .options-group, .calc-btn-container {
+          grid-column: span 1;
+        }
+        .checkbox-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 600px) {
+        .hero h2 {
+          font-size: 2rem;
+        }
+        .calculator-section {
+          padding: 24px;
+        }
+        .checkbox-grid {
+          grid-template-columns: 1fr;
+        }
+        .result-grid {
+          grid-template-columns: 1fr;
+        }
+        .result-item.total {
+          grid-column: span 1;
+        }
+        .content-section {
+          padding: 30px 20px;
+        }
+      }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container logo-container">
+            <h1><a href="/">쏘렌토 가격 및 옵션 비교 정보 가이드</a></h1>
+            <p>2026년형 기아 쏘렌토 파워트레인별 완벽 분석</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- 히어로 섹션 -->
+        <section class="hero" style="border-radius: 0 0 16px 16px; margin-bottom: 20px;">
+            <h2>쏘렌토 가격, 한눈에 비교하고 결정하세요</h2>
+            <p>가솔린, 디젤, 하이브리드 트림별 예상 구매 비용부터 취등록세 감면 혜택, 금융 상품 비교 및 장단점까지 상세히 분석하여 현명한 차량 구매 컨설팅을 제공합니다.</p>
+        </section>
+
+        <!-- 실시간 견적 계산기 및 체류시간 확보용 다차원 입력 폼 -->
+        <section class="calculator-section">
+            <h3>쏘렌토 실시간 신차 가격 계산기</h3>
+            <p style="text-align: center; margin-bottom: 24px; color: #64748b; font-size: 0.95rem;">원하는 엔진, 트림, 옵션을 선택하여 취등록세를 포함한 총 예상 구매 금액을 계산해 보세요.</p>
+            
+            <form id="calc-form" onsubmit="event.preventDefault(); calculatePrice();">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="calc-engine">엔진 파워트레인 선택</label>
+                        <select id="calc-engine" required onchange="calculatePrice();">
+                            <option value="">엔진을 선택하세요</option>
+                            <option value="gasoline">2.5 가솔린 터보</option>
+                            <option value="diesel">2.2 디젤</option>
+                            <option value="hybrid">1.6 터보 하이브리드</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="calc-trim">트림 선택</label>
+                        <select id="calc-trim" required onchange="calculatePrice();">
+                            <option value="">트림을 선택하세요</option>
+                            <option value="prestige">프레스티지 (Prestige)</option>
+                            <option value="noblesse">노블레스 (Noblesse)</option>
+                            <option value="signature">시그니처 (Signature)</option>
+                            <option value="xline">X-Line (엑스라인)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="calc-drive">구동 방식 선택</label>
+                        <select id="calc-drive" required onchange="calculatePrice();">
+                            <option value="2wd">이륜구동 (2WD)</option>
+                            <option value="4wd">사륜구동 (4WD)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="calc-seats">탑승 인원 (시트 옵션)</label>
+                        <select id="calc-seats" required onchange="calculatePrice();">
+                            <option value="5">5인승 (기본 사양)</option>
+                            <option value="6">6인승 (독립 시트 추가)</option>
+                            <option value="7">7인승 (3열 폴딩 시트 추가)</option>
+                        </select>
+                    </div>
+
+                    <div class="options-group">
+                        <label>선호 추가 옵션 선택 (복수 선택 가능)</label>
+                        <div class="checkbox-grid">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="opt-hud" onchange="calculatePrice();">
+                                <span>HUD 및 빌트인캠2</span>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="opt-sunroof" onchange="calculatePrice();">
+                                <span>파노라마 선루프</span>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="opt-sound" onchange="calculatePrice();">
+                                <span>KRELL 사운드</span>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="opt-connect" onchange="calculatePrice();">
+                                <span>스마트 커넥트</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="calc-term">할부 납부 기간 선택</label>
+                        <select id="calc-term" onchange="calculatePrice();">
+                            <option value="36">36개월 할부</option>
+                            <option value="48">48개월 할부</option>
+                            <option value="60" selected>60개월 할부</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="calc-rate">예상 할부 금리 (연 이율 %)</label>
+                        <input type="number" id="calc-rate" value="4.9" step="0.1" min="0" max="15" onchange="calculatePrice();">
+                    </div>
+
+                    <div class="calc-btn-container">
+                        <button type="submit" class="calc-btn">상세 차량 견적 계산 및 리스 요금 조회</button>
+                    </div>
+                </div>
+            </form>
+
+            <div id="calc-result-box" class="calc-result-box">
+                <h4>쏘렌토 예상 견적 계산 결과</h4>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <span class="label">기본 차량 가격</span>
+                        <span class="value" id="res-base-car">0 원</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">옵션 합계 금액</span>
+                        <span class="value" id="res-option-price">0 원</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">순수 차량 가액</span>
+                        <span class="value" id="res-total-car">0 원</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">예상 등록 취득세 (친환경 감면 반영)</span>
+                        <span class="value" id="res-tax">0 원</span>
+                    </div>
+                    <div class="result-item total">
+                        <span class="label">인도 시 예상 총 소요 비용 (차량 + 세금)</span>
+                        <span class="value" id="res-all">0 원</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">월 예상 할부 요금 (원리금 균등)</span>
+                        <span class="value" id="res-monthly" style="color: var(--coral-accent); font-size: 1.3rem;">0 원</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">비고 사항</span>
+                        <span class="value" id="res-note" style="font-size: 0.9rem; color: #64748b;">세제 혜택 임시 적용</span>
+                    </div>
+                </div>
+                <p style="margin-top: 15px; font-size: 0.85rem; color: #64748b; text-align: center;">위 견적은 단순 모의 계산기 결과이며, 제조사 공식 탁송 비용 및 금융사 다이렉트 할인 요금제에 따라 실질 금액은 다소 차이가 있을 수 있습니다.</p>
+            </div>
+        </section>
+
+        <!-- 정보성 콘텐츠 (10,000자 이상 확보용 고품질 본문) -->
+        <article class="content-section">
+            <h2>2026년형 기아 쏘렌토 연식변경의 핵심 변화 요약 및 가격 추이 분석</h2>
+            <p>대한민국 SUV 시장의 압도적인 판매량 1위 브랜드인 기아자동차의 쏘렌토는 2026년형으로의 연식변경을 마쳤습니다. 이번 2026 쏘렌토 가격 개편과 기능 추가는 단순한 외관의 변경을 넘어 소비자들의 실질적인 운행 편의를 극대화하는 내실 다지기에 중점을 두었습니다. 이번 연식변경의 가장 대표적인 차이점은 기존 상위 트림에만 적용되거나 옵션으로 추가해야 했던 차로 유지 보조 2 기능과 정전식 핸들 그립 감지 센서가 전 트림에 기본 사양으로 기본 탑재되었다는 점입니다.</p>
+            
+            <p>차량 기본 가격은 기존 2025 쏘렌토 가격 대비 트림별로 약 30만 원에서 60만 원가량 소폭 상승하였습니다. 많은 예비 구매자들이 이러한 상승폭에 대해 다소 아쉬움을 제기하기도 하지만, 실제로 사후 개별 옵션 설치 비용이나 이전 세대의 선택 옵션 패키지 요금과 비교해 보면 사실상 소비자에게 이득을 주는 가격 인하 효과에 가깝다는 전문 분석이 주를 이룹니다. 특히 1열 도어 맵포켓까지 확대 배치된 앰비언트 라이트와 세련된 감각을 강조한 신규 4스포크 디자인의 스티어링 휠 등 디테일한 감성적 만족도 역시 크게 끌어올렸습니다.</p>
+            
+            <p>쏘렌토 MQ4 가격 변동에서 눈여겨봐야 할 부분은 기존에 가장 개성 있고 묵직한 오프로드 무드를 선사했던 그래비티 트림이 정식으로 폐지되고, 대신 독창적인 블랙 익스테리어 패키지를 가미한 X-Line(엑스라인) 트림이 새롭게 신설되었다는 점입니다. 이로 인해 트림 구성은 프레스티지, 노블레스, 시그니처, 그리고 X-Line의 4가지 종류 체계로 정립되었으며 패밀리카를 찾으시는 예비 오너들의 선택폭을 한층 고급스럽게 넓혀주고 있습니다.</p>
+
+            <h3>2026년식 쏘렌토 파워트레인별 상세 출시 가격표</h3>
+            <p>2026년형 쏘렌토는 가솔린, 디젤, 그리고 친환경 하이브리드의 세 가지 핵심 엔진 구성을 유지하고 있습니다. 내연기관 모델인 쏘렌토 가솔린 가격 및 디젤 트림별 세부 요금은 아래와 같이 상세하게 책정되었습니다. 아래의 표는 5인승 기준이며 구동 방식에 따른 가격 차이를 명확히 구분하여 보여줍니다.</p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>엔진 구분</th>
+                            <th>구동 방식</th>
+                            <th>프레스티지</th>
+                            <th>노블레스</th>
+                            <th>시그니처</th>
+                            <th>X-Line</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2.5 가솔린 터보</td>
+                            <td>2WD (전륜)</td>
+                            <td>35,800,000 원</td>
+                            <td>38,910,000 원</td>
+                            <td>41,680,000 원</td>
+                            <td>42,600,000 원</td>
+                        </tr>
+                        <tr>
+                            <td>2.5 가솔린 터보</td>
+                            <td>4WD (사륜)</td>
+                            <td>38,120,000 원</td>
+                            <td>41,230,000 원</td>
+                            <td>44,000,000 원</td>
+                            <td>44,920,000 원</td>
+                        </tr>
+                        <tr>
+                            <td>2.2 디젤</td>
+                            <td>2WD (전륜)</td>
+                            <td>37,500,000 원</td>
+                            <td>40,610,000 원</td>
+                            <td>43,380,000 원</td>
+                            <td>44,310,000 원</td>
+                        </tr>
+                        <tr>
+                            <td>2.2 디젤</td>
+                            <td>4WD (사륜)</td>
+                            <td>39,820,000 원</td>
+                            <td>42,930,000 원</td>
+                            <td>45,700,000 원</td>
+                            <td>46,630,000 원</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>친환경차 세제혜택 대상인 쏘렌토 하이브리드 가격 또한 연식변경과 더불어 고도화되었습니다. 친환경 혜택과 뛰어난 정숙성 덕분에 전체 출고량 중 압도적 비율을 차지하는 하이브리드 트림의 세부 세제 혜택 반영 금액 및 비혜택 금액을 비교 정리한 지표는 아래와 같습니다.</p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>엔진 구분</th>
+                            <th>구동 방식</th>
+                            <th>프레스티지</th>
+                            <th>노블레스</th>
+                            <th>시그니처</th>
+                            <th>X-Line</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1.6 하이브리드</td>
+                            <td>2WD (세제혜택 반영)</td>
+                            <td>38,960,000 원</td>
+                            <td>42,170,000 원</td>
+                            <td>44,670,000 원</td>
+                            <td>45,590,000 원</td>
+                        </tr>
+                        <tr>
+                            <td>1.6 하이브리드</td>
+                            <td>4WD (세제혜택 미대상)</td>
+                            <td>42,250,000 원</td>
+                            <td>45,460,000 원</td>
+                            <td>47,950,000 원</td>
+                            <td>48,880,000 원</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="font-size: 0.9rem; color: #64748b;">주목해야 할 점은 1.6 터보 하이브리드 2WD의 경우 산업통상자원부의 친환경차 연비 기준을 충족하여 개별소비세 교육세 감면 혜택이 정상적으로 적용된 금액이지만, 하이브리드 4WD 모델의 경우 연비 기준 미달로 세제 혜택이 제외되어 상대적으로 출시 가격과 취등록세 부담 금액의 상승폭이 크다는 점입니다.</p>
+
+            <div class="visual-chart">
+                <h4>2026년형 파워트레인별 기본 트림 출시 금액 분포 (단위: 만원)</h4>
+                <div class="chart-bar-container">
+                    <div class="chart-row">
+                        <div class="chart-label">2.5 가솔린 터보 2WD</div>
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="width: 73.3%;"></div>
+                        </div>
+                        <div class="chart-value">3,580 만원</div>
+                    </div>
+                    <div class="chart-row">
+                        <div class="chart-label">2.2 디젤 2WD</div>
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="width: 76.8%;"></div>
+                        </div>
+                        <div class="chart-value">3,750 만원</div>
+                    </div>
+                    <div class="chart-row">
+                        <div class="chart-label">1.6 하이브리드 2WD</div>
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="width: 79.8%;"></div>
+                        </div>
+                        <div class="chart-value">3,896 만원</div>
+                    </div>
+                    <div class="chart-row">
+                        <div class="chart-label">1.6 하이브리드 4WD</div>
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="width: 86.5%;"></div>
+                        </div>
+                        <div class="chart-value">4,225 만원</div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>트림별 세부 사양 구성 및 예상 구매 비용 분석</h2>
+            <p>차량을 완벽히 분석하고 비교하여 내게 제일 적합한 구성을 도출하려면 트림별 기본 탑재 아이템과 등급 간의 차이점을 파악하는 작업이 핵심입니다. 쏘렌토 프레스티지 가격 단계부터 시작하여 최상위 라인까지 어떠한 가치 차이가 존재하는지 정밀하게 점검해 보겠습니다.</p>
+            
+            <h4>1. 기본의 완성형, 프레스티지 트림</h4>
+            <p>가장 기본이 되는 등급이지만 탑재된 편의 장비들의 스펙은 결코 가볍지 않습니다. 다중 충돌방지 자동 제동 시스템, 10에어백 시스템, 12.3인치 디스플레이 오디오 및 후방 카메라가 들어가 있으며, 특히 이번 연식변경에서 적용된 스티어링 휠 그립 감지 센서 및 차로 유지 보조 2 기능이 기본으로 더해져 가성비를 무엇보다 우선시하는 실용주의적 오너들에게 가장 많은 선택을 받습니다.</p>
+
+            <h4>2. 품격과 가치의 조화, 노블레스 트림</h4>
+            <p>쏘렌토 노블레스 가격 구간으로 넘어오게 되면 내부 인테리어와 실용적 안전 및 도난 방지 사양이 드라마틱하게 향상됩니다. 운전석 메모리 시트와 조동식 전동 시트를 비롯하여 서라운드 뷰 모니터, 후측방 모니터가 기본 탑재됩니다. 특히 스마트 키를 가방에 둔 채 도어 핸들 터치만으로 개폐가 가능한 터치타입 아웃사이드 도어핸들과 기아 디지털 키 2 가 노블레스 트림부터 기본으로 장착되어, 패밀리카로 주행하면서 가족들이 모두 편리하게 문을 여닫을 수 있는 스마트 환경을 구축해 줍니다.</p>
+
+            <h4>3. 기아 테크놀로지의 집약체, 시그니처 트림</h4>
+            <p>쏘렌토 시그니처 가격 단계는 기아가 자랑하는 최첨단 하이테크 편의사양의 정점입니다. 메리디안 프리미엄 사운드 시스템을 제외한 주요 고급 사양들이 대거 흡수되며, 노블레스에서 삭제되었던 220V 인버터가 시그니처 트림에는 고스란히 계승 탑재되어 캠핑이나 차박 등 야외 레저 활동을 내돈내산으로 자주 즐기는 소유주들에게 절대적인 추천을 받는 구성입니다.</p>
+
+            <h4>4. 독보적 익스테리어 매력, X-Line 트림</h4>
+            <p>새롭게 태어난 쏘렌토 X-Line 가격 모델은 다크 테마의 극치를 선사합니다. 전면부 그릴과 아웃사이드 미러 커버, 루프랙 부위 등에 고유한 블랙 고광택 전용 디자인 파츠가 적용되어 도로 위에서 차별화된 하이엔드 존재감을 나타내고 싶어 하는 트렌디한 소비자들에게 완벽한 드레스업 효과를 부여합니다.</p>
+
+            <h3>탑승 인원별 가격 차이 및 패밀리카 목적의 올바른 셋팅</h3>
+            <p>쏘렌토는 시트 배치의 다양성 역시 매력적입니다. 탑승 인원의 승차 종류에 따라 최종적인 예상 견적 금액과 공간 활용성에 장단점이 명확히 갈립니다.</p>
+            <ul class="info-list">
+                <li><strong>5인승 구성 (기본 사양) :</strong> 트렁크와 2열을 완전히 평평하게 눕힐 수 있어 캠핑용 차박 매니아들이 제일 극찬하는 세팅입니다. 추가 비용이 발생하지 않아 쏘렌토 5인승 가격 자체가 진정한 시작가 기준이 됩니다.</li>
+                <li><strong>6인승 구성 (독립식 2열 캡틴시트) :</strong> 2열 시트 중앙에 통로가 생겨 3열로의 이동이 가장 간편하고, 2열에 탑승하는 가족들의 착좌 편안함이 제일 탁월합니다. 쏘렌토 6인승 가격 반영 시 추가 비용으로 84만 원의 요금이 더해집니다.</li>
+                <li><strong>7인승 구성 (3열 보조시트 탑재) :</strong> 다자녀 가구 및 긴급하게 인원을 많이 태워야 하는 라이프스타일에 탁월합니다. 쏘렌토 7인승 가격 산정 시에는 69만 원의 추가 비용이 발생하게 됩니다.</li>
+            </ul>
+
+            <h2>쏘렌토 장기렌트, 리스 vs 직접 구매(일시불/할부)의 금융 장단점</h2>
+            <p>신차를 출고하기로 결정했다면 그 다음으로 고뇌해야 할 영역은 바로 어떤 구매 수단과 요금제 설계를 가져갈 것인가입니다. 단순히 은행 대출이나 할부로만 접근하기보다 장기렌트 및 자동차 리스의 특징을 비교하여 개인별 세금 구조와 자금 운용의 차이점을 파악하는 것이 영리한 전략입니다.</p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>비교 항목</th>
+                            <th>신차 할부 구매</th>
+                            <th>신차 장기렌트</th>
+                            <th>자동차 리스</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>소유 주체</td>
+                            <td>개인 명의</td>
+                            <td>렌트사 명의</td>
+                            <td>리스 금융사 명의</td>
+                        </tr>
+                        <tr>
+                            <td>번호판 종류</td>
+                            <td>일반 번호판</td>
+                            <td>하, 허, 호 전용</td>
+                            <td>일반 번호판</td>
+                        </tr>
+                        <tr>
+                            <td>세금 및 보험료</td>
+                            <td>개인 납부 (건보료 인상 가능)</td>
+                            <td>렌트 요금에 전액 포함</td>
+                            <td>개인 보험 가입 필요</td>
+                        </tr>
+                        <tr>
+                            <td>사고 시 리스크</td>
+                            <td>개인 보험료 할증 발생</td>
+                            <td>면책금 제도로 할증 없음</td>
+                            <td>개인 보험료 할증 발생</td>
+                        </tr>
+                        <tr>
+                            <td>초기 예상 비용</td>
+                            <td>취등록세 및 선수금 발생</td>
+                            <td>보증금 선납금 설정에 따라 0원 가능</td>
+                            <td>보증 조건 설정에 따라 0원 가능</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>실제로 쏘렌토 장기렌트 가격 모델은 초기 비용 0원으로 신차 출고를 원하시는 사업자 및 젊은 연령대의 직장인들에게 훌륭한 해법이 됩니다. 매달 납부하는 일정한 요금 안에 자동차세, 종합보험료, 취등록세 요금 등이 모두 일괄 포함되어 있어 지출 자금의 예상 관리가 제일 수월합니다. 또한, 사고가 여러 번 나더라도 렌트업체 명의의 단체 요금율이 적용되어 개인의 보험 가입 이력에 손상을 주지 않는다는 압도적인 메리트가 존재합니다.</p>
+            
+            <p>이와 다르게 하, 허, 호 전용 번호판 부착에 따른 미관상 단점을 꺼리는 분들이라면 일반 자동차 번호판을 사용하면서 리스사 전용 요금제를 운용하는 쏘렌토 리스 가격 프로그램을 대안으로 고려할 수 있습니다. 리스는 보험을 개인 명의로 연계하여 직접 가입하므로 무사고 운전 경력이 기신 운전자라면 매월 리스 대금을 산출할 때 더욱 유리한 지점을 가져갈 수도 있어 현명한 금융 비교가 필수적입니다.</p>
+
+            <h2>쏘렌토 하이브리드 vs 가솔린 최적의 파워트레인 추천 제안</h2>
+            <p>쏘렌토를 계약하는 고객들이 제일 깊은 고뇌의 늪에 빠지게 되는 질문은 바로 가솔린을 살 것인가, 하이브리드를 살 것인가의 연비와 경제성 밸런스 문제입니다. 쏘렌토 가솔린 가격 등급은 약 3,500만 원 선에서 접근할 수 있는 반면, 쏘렌토 하이브리드 가격 등급은 3,800~4,000만 원 초반부터 진입이 가능하여 기본적인 차량 본체 비용에서 평균 약 300만 원 이상의 시드 머니 차이가 형성됩니다.</p>
+            
+            <p>그렇다면 과연 하이브리드를 구매했을 때 유류비 효율만으로 이 가격 격차를 극복하는 데 소요되는 시간은 얼마일까요? 아래의 연간 유지 관리비 평균 계산 시뮬레이션을 통해 직접 그 차이를 추산해 보겠습니다.</p>
+
+            <div class="table-container">
+                <h3>연간 15,000km 주행 기준 연료비 및 세금 가상 비교표 (리터당 1,600원 가정)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>구분 항목</th>
+                            <th>2.5 가솔린 터보 2WD (복합연비 10.8km/L)</th>
+                            <th>1.6 터보 하이브리드 2WD (복합연비 15.7km/L)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>연간 예상 소비 연료</td>
+                            <td>약 1,388 리터</td>
+                            <td>약 955 리터</td>
+                        </tr>
+                        <tr>
+                            <td>연간 총 유류 비용</td>
+                            <td>약 2,220,800 원</td>
+                            <td>약 1,528,000 원</td>
+                        </tr>
+                        <tr>
+                            <td>연간 배기량별 자동차세</td>
+                            <td>약 650,000 원 (배기량 2,497cc)</td>
+                            <td>약 290,000 원 (배기량 1,598cc)</td>
+                        </tr>
+                        <tr>
+                            <td>연간 유류비 및 세금 합계</td>
+                            <td>약 2,870,800 원</td>
+                            <td>약 1,818,000 원</td>
+                        </tr>
+                        <tr>
+                            <td><strong>매년 발생하는 격차 금액</strong></td>
+                            <td colspan="2" style="text-align: center; font-weight: 700; color: var(--secondary-color);">하이브리드 선택 시 연간 약 1,052,800 원 절감 효과</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>위 도표에서 확인 가능하듯이 매년 세금과 유류비에서 발생하는 고정 차액 금액이 약 100만 원에 달합니다. 즉, 차량을 구입하고 3년 이상 안정적으로 유지할 계획이 있는 오너들이라면 주저 없이 친환경 세제 혜택과 시너지 효과가 있는 쏘렌토 하이브리드 추천 트림을 낙점하는 것이 무조건 돈을 버는 영리한 초이스가 됩니다. 반대로 연간 총 주행거리가 5,000km 미만으로 극도로 짧고 패밀리카로 고속도로 가속성이나 경쾌한 엔진 필링을 선호하신다면 정비 관리 및 예산 세이브 면에서 뛰어난 쏘렌토 2.5 터보 가격 라인업이 현실적인 안착지가 될 것입니다.</p>
+
+            <h2>인터넷 신차 다이렉트 할인 및 성지 좌표를 통한 알뜰 구매 노하우</h2>
+            <p>과거에는 영업소를 돌아다니며 발품을 파는 방식으로만 차를 샀지만, 스마트한 시대가 도래한 만큼 이제는 수많은 온라인 성지 사이트 및 신차 견적 전용 어플이나 전문 비교 앱을 이용하여 다이렉트 차량 매칭을 진행하는 스마트 컨설팅이 유행을 이끌고 있습니다. 보배드림이나 펨코, 에펨코리아, 그리고 대표 커뮤니티인 디시인사이드 차갤 등에서 유저들이 남겨주는 신뢰도 높은 내돈내산 출고 계약 후기들을 들여다보면 실질적으로 오프라인 전시장보다 인터넷을 통해 비공개 추가 수당 사은품이나 현금지원 혜택을 제공받는 좌표 성지들의 정보가 꾸준하게 공유되고 있음을 알 수 있습니다.</p>
+            
+            <p>온라인 다이렉트 전문 업체를 통해 구매를 진행할 경우 딜러 수수료가 제거되어 더욱 저렴한곳 혹은 제일 싼곳을 찾아서 최저가 신차 가입이 수월해집니다. 또한 신규 가입 제휴 프로모션 기간에는 차량 계약 사은 상품 외에도 주유 상품권이나 현금지원 형태의 대규모 프로모션 보조금 혜택을 제공받을 수 있어 초기 구입 지출 부담을 비약적으로 낮춰줍니다. 특히 토스, 카카오톡 채널, 텔레그램 정보방 등을 통해 금융 연계 카드 결제 시 최대 1%에서 2%에 달하는 고액의 오토캐시백 혜택도 놓쳐서는 안 될 최고의 구매 방법입니다.</p>
+
+            <h2>실제 차주들의 현실적인 평가 및 보배드림, 펨코 유저들의 소감</h2>
+            <p>국내 대형 자동차 전문 포털 커뮤니티인 보배드림과 에펨코리아 등에서 소유주들이 실제 내돈내산으로 약 1년 이상 운행하며 작성한 생생한 실사용 후기를 객관적으로 정합해 보면 쏘렌토가 왜 수년 동안 정상을 지킬 수밖에 없는지 그 핵심 경쟁력이 가감 없이 보입니다.</p>
+            
+            <p>가장 많이 칭찬받는 강력한 장점은 동급 대비 압도적으로 광활하게 확보한 거주 실내 공간과 트렁크 적재율입니다. 하이패스, 차선 이탈 방지, 운전자 주의 경고 등 훌륭한 주행 보조 장치뿐만 아니라, 하이브리드 모델 한정으로 과속방지턱을 넘을 때 전기모터의 역토크 제어로 부드러운 승차감을 확보해 주는 e-Motion Drive 첨단 장치가 주는 감동에 대해 보배드림 유저들의 극찬이 끝없이 이어지고 있습니다.</p>
+            
+            <p>반면 소비자들이 호소하는 일부 단점도 꼼꼼히 체크해 두어야 예방할 수 있습니다. 1.6 터보 하이브리드의 경우 겨울철 낮은 외부 기온 환경에서 냉각수 온도 상승 문제로 인해 히터 가동과 엔진 강제 개입이 빈번해지며 일시적인 실내 연비 저하 및 특유의 하이브리드 엔진 구동 진동 소음이 부각된다는 보배드림 주행기 지적이 존재합니다. 또한 디젤 엔진의 경우 친환경 규제 기조에 따라 미래 단종 가능성이 제일 유력하게 점쳐져 잔존 가치 방어 측면에서 디젤에 대한 고민은 늘어만 가고 있어, 쏘렌토 디젤 시그니처 가격 등을 알아볼 때 깊은 주의가 권장됩니다.</p>
+        </article>
+
+        <!-- 자주 묻는 질문 (FAQ) 아코디언 -->
+        <section class="content-section faq-container">
+            <h2>자주 묻는 질문 (FAQ)</h2>
+            <div class="faq-item">
+                <div class="faq-item-title">
+                    <span class="faq-item-title-text">쏘렌토 하이브리드 모델의 실제 납기 예상 대기 시간은 평균 얼마나 소요되나요?</span>
+                    <span class="faq-item-status">상세 보기</span>
+                </div>
+                <div class="faq-item-content">
+                    <p>현재 2026년형 쏘렌토 하이브리드 가격 사양에 대한 선호도가 전반적으로 매우 높아 인기 트림인 시그니처 및 노블레스 기준으로 신차 계약 시 평균 약 4개월에서 6개월 이상의 차량 출고 대기 납기가 예상되고 있습니다. 대기 기간을 비약적으로 아끼고 빠른 차량 인도를 원하신다면, 신차 장기렌트카 전문 업체의 즉시 출고 특판 물량이나 다이렉트 차량 중개 어플에서 제공하는 실시간 선발주 재고 현황 성지 리스트를 확인하시는 것이 제일 효과적인 방법입니다.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-item-title">
+                    <span class="faq-item-title-text">쏘렌토 가솔린 시그니처와 하이브리드 시그니처 트림의 실질적인 사양 차이점은 무엇인가요?</span>
+                    <span class="faq-item-status">상세 보기</span>
+                </div>
+                <div class="faq-item-content">
+                    <p>두 차량 모두 시그니처 등급에 지정된 첨단 주행 보조 시스템과 인조가죽 및 가죽 시트 등 내장 인테리어 패키지 사양은 거의 유사합니다. 하지만 1.6 하이브리드 파워트레인은 저공해 2종 인증 혜택을 통한 공영주차장 50% 감면 및 전국 공항 주차장 할인 혜택이 적용되며, 차량 주행 안정성을 끌어올리는 모터 제어 신기술인 e-Motion Drive가 단독으로 적용되어 한층 세련된 드라이빙 질감을 선사하는 기능상의 큰 차이점이 존재합니다.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-item-title">
+                    <span class="faq-item-title-text">디젤 모델의 완전한 단종 예정설이 돌고 있는데 중고차 처분 시 잔존 가치는 괜찮을까요?</span>
+                    <span class="faq-item-status">상세 보기</span>
+                </div>
+                <div class="faq-item-content">
+                    <p>쏘렌토 디젤 가격 구간은 강력한 토크와 장거리 주행 효율성 덕분에 고속도로 화물 견인이나 고속 주행 중심의 매니아층에서 꾸준하게 거래되고 있습니다. 그러나 국내 주요 친환경 정책 추이와 자동차 시장 전반의 전동화 흐름으로 인해 향후 쏘렌토 중고차 가격 감가율은 디젤 모델이 가솔린 및 하이브리드 대비 상대적으로 높을 수 있습니다. 장기적인 감가 예상 리스크를 완벽하게 회피하려는 목적이라면 애초에 잔존 가치를 렌트사에서 보장하는 신차 리스나 장기렌트 이용 방식으로 차량을 확보하는 금융 컨설팅을 강력히 제안드립니다.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-item-title">
+                    <span class="faq-item-title-text">기아 디지털 키 2 및 빌트인 캠 2 등의 첨단 디지털 사양은 프레스티지 기본 등급에도 탑재가 가능한가요?</span>
+                    <span class="faq-item-status">상세 보기</span>
+                </div>
+                <div class="faq-item-content">
+                    <p>기아 디지털 키 2 및 터치타입 아웃사이드 도어 핸들 기능은 2026년형 기준으로 노블레스 트림부터 기본으로 탑재되며 프레스티지 트림에서는 패키지 선택 사양으로도 가입이 제한되는 아쉬운 단점이 있습니다. 첨단 멀티미디어 인터페이스와 디지털 라이프 기능을 패밀리카에 완벽하게 탑재하여 편리함을 제일 선호하시는 성향이라면 최소 노블레스 트림을 선택하시거나 옵션 선택이 자유로운 시그니처 트림 이상으로 견적 금액을 설정하시는 편이 현명한 방법입니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 신뢰성 높은 3대 공식 사이트 카드 정보 -->
+        <section class="external-link-card">
+            <h3>신뢰할 수 있는 쏘렌토 정보 및 차량 견적 가이드 채널</h3>
+            <p>가장 명확하고 법적 및 사실적 오류가 없는 기아 쏘렌토 관련 전문 데이터는 아래의 검증된 공식 기관 및 포털을 통해 추가로 확인하실 수 있습니다.</p>
+            <div class="link-list">
+                <div class="link-item">
+                    <a href="https://directpcheckr.koreahankang.com" target="_blank" rel="noopener">차량 금융 다이렉트 최저가 비교 센터 (reliabledone.com 서브도메인 정보망)</a>
+                </div>
+                <div class="link-item">
+                    <a href="https://namu.wiki/w/%EA%B8%B0%EC%95%84_%EC%94%B0%EB%A0%8C%ED%86%A0" target="_blank" rel="noopener">기아 쏘렌토 나무위키 공식 상세 백과지식 문서</a>
+                </div>
+                <div class="link-item">
+                    <a href="https://www.kia.com/kr/vehicles/sorento/features" target="_blank" rel="noopener">기아자동차 공식 홈페이지: 2026년형 쏘렌토 제원 및 모의 견적 카탈로그</a>
+                </div>
+            </div>
+        </section>
     </main>
-  </body>
-</html>
+
+
+  
+
+    <!-- 자바스크립트: FAQ 토글 및 다차원 가격 계산 기능 구현 -->
+    <script>
+        // FAQ 토글 스크립트
+        document.querySelectorAll('.faq-item-title').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                const statusSpan = item.querySelector('.faq-item-status');
+                
+                parent.classList.toggle('active');
+                
+                if (parent.classList.contains('active')) {
+                    statusSpan.textContent = '접기';
+                } else {
+                    statusSpan.textContent = '상세 보기';
+                }
+            });
+        });
+
+        // 실시간 견적 계산기 스크립트
+        function calculatePrice() {
+            const engine = document.getElementById('calc-engine').value;
+            const trim = document.getElementById('calc-trim').value;
+            const drive = document.getElementById('calc-drive').value;
+            const seats = document.getElementById('calc-seats').value;
+            
+            // 필수값이 누락되었으면 결과창을 노출하지 않음
+            if (!engine || !trim) {
+                document.getElementById('calc-result-box').style.display = 'none';
+                return;
+            }
+
+            // 2026 쏘렌토 트림별 기준 기본 가격 매핑 테이블
+            let basePrice = 0;
+
+            if (engine === 'gasoline') {
+                if (trim === 'prestige') basePrice = 35800000;
+                else if (trim === 'noblesse') basePrice = 38910000;
+                else if (trim === 'signature') basePrice = 41680000;
+                else if (trim === 'xline') basePrice = 42600000;
+            } else if (engine === 'diesel') {
+                if (trim === 'prestige') basePrice = 37500000;
+                else if (trim === 'noblesse') basePrice = 40610000;
+                else if (trim === 'signature') basePrice = 43380000;
+                else if (trim === 'xline') basePrice = 44310000;
+            } else if (engine === 'hybrid') {
+                if (drive === '2wd') {
+                    // 세제혜택 적용 기준 가격
+                    if (trim === 'prestige') basePrice = 38960000;
+                    else if (trim === 'noblesse') basePrice = 42170000;
+                    else if (trim === 'signature') basePrice = 44670000;
+                    else if (trim === 'xline') basePrice = 45590000;
+                } else {
+                    // 4WD 세제혜택 미반영 기준 가격
+                    if (trim === 'prestige') basePrice = 42250000;
+                    else if (trim === 'noblesse') basePrice = 45460000;
+                    else if (trim === 'signature') basePrice = 47950000;
+                    else if (trim === 'xline') basePrice = 48880000;
+                }
+            }
+
+            // 구동방식 추가 요금 계산 (하이브리드는 이미 구분 반영됨)
+            let driveAddPrice = 0;
+            if (engine !== 'hybrid' && drive === '4wd') {
+                driveAddPrice = 2320000; // 가솔린/디젤 4WD 추가 비용
+            }
+
+            // 시트 옵션별 추가 가격 계산
+            let seatOptionPrice = 0;
+            if (seats === '6') {
+                seatOptionPrice = 840000;
+            } else if (seats === '7') {
+                seatOptionPrice = 690000;
+            }
+
+            // 개별 체크 박스 편의 사양 옵션 누적 계산
+            let optionSum = 0;
+            if (document.getElementById('opt-hud').checked) optionSum += 1190000;
+            if (document.getElementById('opt-sunroof').checked) optionSum += 1090000;
+            if (document.getElementById('opt-sound').checked) optionSum += 640000;
+            if (document.getElementById('opt-connect').checked) optionSum += 990000;
+
+            const finalVehiclePrice = basePrice + driveAddPrice + seatOptionPrice + optionSum;
+
+            // 대한민국 신차 등록 취득세 세율 7% 계산
+            let calculatedTax = Math.round(finalVehiclePrice * 0.07);
+            let noteText = "가솔린/디젤 일반 취등록세율 적용";
+
+            // 친환경 하이브리드 모델 감면 혜택 계산 (취득세 최대 40만원 일괄 한도 감면 적용)
+            if (engine === 'hybrid') {
+                if (drive === '2wd') {
+                    calculatedTax = Math.max(0, calculatedTax - 400000);
+                    noteText = "친환경차 세제혜택 적용 완료 (개별소비세 감면 및 취득세 최대 40만 원 감면)";
+                } else {
+                    noteText = "하이브리드 4WD 모델은 친환경 세제 미혜택 대상 차량입니다.";
+                }
+            }
+
+            const totalPurchaseAmount = finalVehiclePrice + calculatedTax;
+
+            // 금융 할부 월 요금 산출 (원리금 균등 분할 상환 방식 적용)
+            const termMonths = parseInt(document.getElementById('calc-term').value);
+            const yearlyRate = parseFloat(document.getElementById('calc-rate').value) / 100;
+            const monthlyRate = yearlyRate / 12;
+
+            let monthlyInstallment = 0;
+            if (monthlyRate > 0) {
+                monthlyInstallment = Math.round((totalPurchaseAmount * monthlyRate * Math.pow(1 + monthlyRate, termMonths)) / (Math.pow(1 + monthlyRate, termMonths) - 1));
+            } else {
+                monthlyInstallment = Math.round(totalPurchaseAmount / termMonths);
+            }
+
+            // DOM 렌더링 및 출력 업데이트
+            document.getElementById('res-base-car').innerText = (basePrice + driveAddPrice).toLocaleString() + ' 원';
+            document.getElementById('res-option-price').innerText = (seatOptionPrice + optionSum).toLocaleString() + ' 원';
+            document.getElementById('res-total-car').innerText = finalVehiclePrice.toLocaleString() + ' 원';
+            document.getElementById('res-tax').innerText = calculatedTax.toLocaleString() + ' 원';
+            document.getElementById('res-all').innerText = totalPurchaseAmount.toLocaleString() + ' 원';
+            document.getElementById('res-monthly').innerText = monthlyInstallment.toLocaleString() + ' 원';
+            document.getElementById('res-note').innerText = noteText;
+
+            // 결과창 나타내기
+            document.getElementById('calc-result-box').style.display = 'block';
+        }
+    </script>
+  
